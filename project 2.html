@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Audio | Premium Minimalist Sound</title>
+    <style>
+        /* CSS Reset & Core Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-pastel: #FDF6F6;     /* Ultra-soft elegant pink-white */
+            --accent-light: #F4DCD6; /* Subdued pastel pink */
+            --accent-dark: #D4A396;  /* Sophisticated muted rose tech accent */
+            --text-main: #332A28;    /* Deep charcoal pink-grey for professional contrast */
+            --white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--bg-pastel);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 163, 150, 0.2);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            color: #615552;
+            font-weight: 300;
+        }
+
+        /* Action Component */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--white);
+            padding: 0.85rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-dark);
+        }
+
+        /* Features Layout */
+        .features {
+            background-color: var(--white);
+            padding: 6rem 2rem;
+            border-top: 1px solid rgba(212, 163, 150, 0.15);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 4rem;
+        }
+
+        .grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .card {
+            padding: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            border-left: 3px solid var(--accent-dark);
+            padding-left: 0.75rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #615552;
+            font-weight: 300;
+            padding-left: 1rem;
+        }
+
+        /* Pricing Component */
+        .pricing {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-box {
+            background: var(--white);
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 3.5rem 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(51, 42, 40, 0.04);
+            border: 1px solid var(--accent-light);
+        }
+
+        .pricing-box h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 300;
+            margin: 1.5rem 0;
+            color: var(--text-main);
+        }
+
+        .pricing-box ul {
+            list-style: none;
+            margin: 2rem 0;
+            padding: 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .pricing-box li {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: #615552;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        /* Custom subtle checkmark */
+        .pricing-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+            font-weight: bold;
+        }
+
+        .pricing-box .cta-btn {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-main);
+            color: var(--accent-light);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Adaptability */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1.2rem;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo" aria-label="Aura Audio Brand Logo">Aura Audio</div>
+        <nav aria-label="Main Navigation">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#pricing" class="cta-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Order</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Precision audio. Minimalist design.</h1>
+        <p>Experience an uncompromising premium acoustic profile packaged in a refined pastel housing. Crafted intentionally for modern professionals.</p>
+        <a href="#pricing" class="cta-btn">Discover Aura Pro</a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Engineered performance</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Acoustic Clarity</h3>
+                <p>Custom-engineered drivers deliver high-resolution audio with an exceptionally balanced response curve.</p>
+            </div>
+            <div class="card">
+                <h3>Extended Playback</h3>
+                <p>Engineered architecture provides up to 30 hours of regulated battery capacity via the charging smart-case.</p>
+            </div>
+            <div class="card">
+                <h3>Ergonomic Profile</h3>
+                <p>Calibrated weight distribution ensures a secure, unobtrusive fit optimized for extended wear.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Transparent pricing</h2>
+        <div class="pricing-box">
+            <h3>Aura Edition Pro</h3>
+            <div class="price">₹1490</div>
+            <p>Complete workspace and travel audio hardware package.</p>
+            <ul>
+                <li>Anodized pastel smart-charging case</li>
+                <li>Hybrid Active Noise Cancellation (ANC)</li>
+                <li>Three sizes of premium memory foam tips</li>
+                <li>2-Year hardware warranty coverage</li>
+            </ul>
+            <a href="#" class="cta-btn">Purchase Product</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aura Audio Technologies Inc. All technical specifications are subject to change.</p>
+    </footer>
+
+</body>
+</html>
